@@ -7,11 +7,7 @@ router.post('/', PcPartsController.createPcPart);
 
 router.get('/:id', PcPartsController.getPartsById);
 
-router.patch(
-  '/:id',
-  // validateRequest(),
-  PcPartsController.updatePartsById
-);
+router.patch('/:id', PcPartsController.updatePartsById);
 
 router.delete('/:id', PcPartsController.deleteParts);
 

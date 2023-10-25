@@ -1,7 +1,7 @@
 import { Schema, model } from 'mongoose';
-import { IPcPart, PcPartsModal } from './parts.Interface';
+import { IBuilder, PcBuilderModal } from './builder.Interface';
 
-const PcPartsSchema = new Schema<IPcPart, PcPartsModal>(
+const PcPartsSchema = new Schema<IBuilder, PcBuilderModal>(
   {
     Model: {
       type: String,
@@ -181,4 +181,7 @@ const PcPartsSchema = new Schema<IPcPart, PcPartsModal>(
   }
 );
 
-export const PcParts = model<IPcPart, PcPartsModal>('pc-parts', PcPartsSchema);
+export const Builder = model<IBuilder, PcBuilderModal>(
+  'categorys',
+  PcPartsSchema
+);

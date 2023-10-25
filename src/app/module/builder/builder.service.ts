@@ -2,21 +2,21 @@ import { SortOrder } from 'mongoose';
 import calculatePagination from '../../../helpers/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common';
 import { IPaginationOptions } from '../../../interfaces/pagination';
-import { IPcPart, IPcPartsFilterRequest } from './parts.Interface';
-import { PcParts } from './parts.Modal';
-import { pcPartsSearchableFields } from './parts.constant';
+import { pcPartsSearchableFields } from '../pcParts/parts.constant';
+import { IBuilder, IPcPartsFilterRequest } from './builder.Interface';
+import { Builder } from './builder.Modal';
 
-const createParts = async (paylode: IPcPart): Promise<IPcPart> => {
+const buildPc = async (paylode: IBuilder): Promise<IBuilder> => {
   console.log(paylode);
 
-  const result = await PcParts.create(paylode);
+  const result = await Builder.create(paylode);
   return result;
 };
- 
-const getAllParts = async (
+
+const getAllBuildPc = async (
   filters: IPcPartsFilterRequest,
   pageinationOptions: IPaginationOptions
-): Promise<IGenericResponse<IPcPart[]>> => {
+): Promise<IGenericResponse<IBuilder[]>> => {
   // pagination helpers
   const { page, limit, skip, sortBy, sortOrder } =
     calculatePagination(pageinationOptions);
@@ -49,12 +49,12 @@ const getAllParts = async (
   const requestCondetion =
     andCondation.length > 0 ? { $and: andCondation } : {};
 
-  const result = await PcParts.find(requestCondetion)
+  const result = await Builder.find(requestCondetion)
     .sort(sortCondations)
     .skip(skip)
     .limit(limit);
 
-  const total = await PcParts.countDocuments();
+  const total = await Builder.countDocuments();
 
   return {
     meta: {
@@ -66,30 +66,30 @@ const getAllParts = async (
   };
 };
 
-const getSingleparts = async (id: string): Promise<IPcPart | null> => {
-  const result = await PcParts.findById(id);
+const getSinglePc = async (id: string): Promise<IBuilder | null> => {
+  const result = await Builder.findById(id);
   return result;
 };
 
-const updatePartById = async (
+const updateBuildPcById = async (
   id: string,
-  paylode: IPcPart
-): Promise<IPcPart | null> => {
-  const result = await PcParts.findByIdAndUpdate({ _id: id }, paylode, {
+  paylode: IBuilder
+): Promise<IBuilder | null> => {
+  const result = await Builder.findByIdAndUpdate({ _id: id }, paylode, {
     new: true,
   });
   return result;
 };
 
-const deletePcParts = async (id: string): Promise<IPcPart | null> => {
-  const result = await PcParts.findByIdAndDelete(id);
+const deleteBuildPc = async (id: string): Promise<IBuilder | null> => {
+  const result = await Builder.findByIdAndDelete(id);
   return result;
 };
 
-export const PcPartsServices = {
-  createParts,
-  getAllParts,
-  getSingleparts,
-  updatePartById,
-  deletePcParts,
+export const pcBuilderServices = {
+  buildPc,
+  getAllBuildPc,
+  getSinglePc,
+  updateBuildPcById,
+  deleteBuildPc,
 };

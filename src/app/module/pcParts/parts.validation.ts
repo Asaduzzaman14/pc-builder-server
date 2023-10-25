@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const createAcademicDepartmentZodSchema = z.object({
+const createPcPartZodSchema = z.object({
   body: z.object({
     Model: z.string().min(1, { message: 'Model is required' }),
     InputSensitivity: z.string(),
@@ -28,14 +28,6 @@ const createAcademicDepartmentZodSchema = z.object({
   }),
 });
 
-const updateAcademicDepartmentZodSchema = z.object({
-  body: z.object({
-    title: z.string().optional(),
-    academicFaculty: z.string().optional(),
-  }),
-});
-
-export const AcademicDepartmentValidation = {
-  createAcademicDepartmentZodSchema,
-  updateAcademicDepartmentZodSchema,
+export const partValidation = {
+  createPcPartZodSchema,
 };

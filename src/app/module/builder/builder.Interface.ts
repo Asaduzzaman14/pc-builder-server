@@ -1,6 +1,6 @@
 import { Model } from 'mongoose';
 
-export type IPcPart = {
+export type IBuilder = {
   Model: string;
   Brand: string;
   Details: string;
@@ -56,7 +56,7 @@ export type IPcPart = {
   Socket?: string;
 };
 
-export type PcPartsModal = Model<IPcPart, unknown>;
+export type PcBuilderModal = Model<IBuilder, unknown>;
 
 export type IPcPartsFilterRequest = {
   searchTerm?: string;
