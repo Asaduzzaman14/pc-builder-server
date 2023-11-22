@@ -1,6 +1,6 @@
 import express from 'express';
 import { BuilderRoutes } from '../module/builder/builder.route';
-import { AcademicDepartmentRoutes } from '../module/pcParts/parts.route';
+import { PcPartsRoutes } from '../module/pcParts/parts.route';
 
 const router = express.Router();
 
@@ -8,10 +8,10 @@ const moduleRoutes = [
   // ... routes
   {
     path: '/pc-parts',
-    routes: AcademicDepartmentRoutes,
+    routes: PcPartsRoutes,
   },
   {
-    path: '/pc-parts',
+    path: '/pc-build',
     routes: BuilderRoutes,
   },
 ];

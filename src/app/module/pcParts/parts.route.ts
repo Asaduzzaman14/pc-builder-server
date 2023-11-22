@@ -13,4 +13,4 @@ router.delete('/:id', PcPartsController.deleteParts);
 
 router.get('/', PcPartsController.getAllParts);
 
-export const AcademicDepartmentRoutes = router;
+export const PcPartsRoutes = router;

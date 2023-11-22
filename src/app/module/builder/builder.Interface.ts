@@ -1,17 +1,17 @@
 import { Model } from 'mongoose';
 
-export type IBuilder = {
-  Model: string;
-  Brand: string;
-  Details: string;
-  Category: string;
-  img1: string;
-  img2: string;
-  Status: string;
-  Price: number;
-  ProductId: number;
-  AvgRatings: number;
-  Reviews: string[];
+export type items = {
+  Model?: string;
+  Brand?: string;
+  Details?: string;
+  Category?: string;
+  img1?: string;
+  img2?: string;
+  Status?: string;
+  Price?: number;
+  ProductId?: number;
+  AvgRatings?: number;
+  Reviews?: string[];
   InputSensitivity?: string;
   FrequencyResponse?: string;
   Type?: string;
@@ -54,6 +54,11 @@ export type IBuilder = {
   Speed?: string;
   AirFlow?: string;
   Socket?: string;
+};
+
+export type IBuilder = {
+  email: string;
+  products: items[];
 };
 
 export type PcBuilderModal = Model<IBuilder, unknown>;
