@@ -4,8 +4,8 @@ import { paginationFields } from '../../../constants/pagination';
 import catchAsync from '../../../shared/catchAsync';
 import pick from '../../../shared/pick';
 import sendResponse from '../../../shared/sendResponse';
-import { pcPartsFilterableFields } from '../pcParts/parts.constant';
 import { IBuilder } from './builder.Interface';
+import { pcPartsFilterableFields } from './builder.constant';
 import { pcBuilderServices } from './builder.service';
 
 const buildPc = catchAsync(async (req: Request, res: Response) => {

@@ -7,16 +7,3 @@ export const pcPartsFilterableFields = [
 ];
 
 export const pcPartsSearchableFields = ['Category', 'Brand', 'Price'];
-
-// export const facultyFilterableFields = [
-//   'searchTerm',
-//   'id',
-//   'gender',
-//   'bloodGroup',
-//   'email',
-//   'contactNo',
-//   'emergencyContactNo',
-//   'academicFaculty',
-//   'academicDepartment',
-//   'designation',
-// ];

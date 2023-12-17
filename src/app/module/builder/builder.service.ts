@@ -2,9 +2,9 @@ import { SortOrder } from 'mongoose';
 import calculatePagination from '../../../helpers/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common';
 import { IPaginationOptions } from '../../../interfaces/pagination';
-import { pcPartsSearchableFields } from '../pcParts/parts.constant';
 import { IBuilder, IPcPartsFilterRequest } from './builder.Interface';
 import { Builder } from './builder.Modal';
+import { pcPartsSearchableFields } from './builder.constant';
 
 const buildPc = async (paylode: IBuilder): Promise<IBuilder> => {
   console.log(paylode);
