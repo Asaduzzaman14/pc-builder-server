@@ -45,8 +45,11 @@ const register = catchAsync(async (req: Request, res: Response) => {
 // });
 
 const getSingleUser = catchAsync(async (req: Request, res: Response) => {
-  const id = req.params.id;
-  const result = await authServices.getSingleUser(id);
+  const email = req.params.email;
+  console.log(email);
+
+  const result = await authServices.getSingleUser(email);
+  console.log(result);
 
   sendResponse<IUser>(res, {
     statusCode: httpStatus.OK,

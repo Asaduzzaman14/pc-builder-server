@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.post('/', authController.register);
 
-router.get('/:id', authController.getSingleUser);
+router.get('/:email', authController.getSingleUser);
 
 router.patch('/:id', authController.updateUser);
 

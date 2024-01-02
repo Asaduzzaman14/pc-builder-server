@@ -61,8 +61,8 @@ const register = async (paylode: IUser): Promise<IUser> => {
 //   };
 // };
 
-const getSingleUser = async (id: string): Promise<IUser | null> => {
-  const result = await User.findById(id);
+const getSingleUser = async (email: string): Promise<IUser | null> => {
+  const result = await User.findOne({ email });
   return result;
 };
 
