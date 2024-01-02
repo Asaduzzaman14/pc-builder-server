@@ -1,4 +1,5 @@
 import express from 'express';
+import { AuthRoutes } from '../module/auth/auth.routes';
 import { BuilderRoutes } from '../module/builder/builder.route';
 import { PcPartsRoutes } from '../module/pcParts/parts.route';
 
@@ -13,6 +14,10 @@ const moduleRoutes = [
   {
     path: '/pc-build',
     routes: BuilderRoutes,
+  },
+  {
+    path: '/auth',
+    routes: AuthRoutes,
   },
 ];
 
